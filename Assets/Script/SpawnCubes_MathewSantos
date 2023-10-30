@@ -1,0 +1,67 @@
+// Mathew Santos Interactive Scripting 
+// this will spawn cube randomly throughout the map 
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpawnCubes : MonoBehaviour
+{
+    [SerializeField]
+    GameObject prefabCube;
+
+    [SerializeField]
+   float X1;
+    [SerializeField]
+    float X2;
+    [SerializeField]
+   float Y;
+    [SerializeField]
+   float Z1;
+    [SerializeField]
+   float Z2;
+    [SerializeField]
+    float cubesSpawned;
+    [SerializeField]
+    float timerWait;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+       
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+         if (Input.GetKeyDown(KeyCode.G))
+        {
+            Debug.Log("Spawner Started");
+            StartCoroutine(SpawnLoop());
+        }
+    }
+    // spawn a cube 
+    GameObject SpawnCube()
+    {
+        GameObject cube = Instantiate(prefabCube);
+        // move cube to x poition from -40 to 40, z position to -40 to 40, y position of 2
+        cube.transform.position = new Vector3(Random.Range(X1, X2), Y, Random.Range(Z1, Z2));
+        cube.AddComponent(typeof(Rigidbody));
+        cube.GetComponent<Renderer>().material.color = Random.ColorHSV();
+        return cube;
+    }
+
+    // loop 
+    IEnumerator SpawnLoop()
+    {
+        int counter = 0;
+        while (counter < cubesSpawned) // once counter is greater than 25 the while loop will shut itself down
+        {
+            counter += 1;
+            SpawnCube();
+            yield return new WaitForSeconds(timerWait);
+
+        
+        }
+    }
+}
