@@ -348,6 +348,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8161761179370979710, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+      propertyPath: wreckingball
+      value: 
+      objectReference: {fileID: 1102689597}
+    - target: {fileID: 9183669585796442647, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1102689598}
+    - target: {fileID: 9183669585796442647, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+      propertyPath: ballStart
+      value: 
+      objectReference: {fileID: 1307571752}
+    - target: {fileID: 9183669585796442647, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+      propertyPath: readyToLaunch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183669585796442647, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+      propertyPath: curve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183669585796442647, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183669585796442647, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -611,6 +639,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1102689597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9183669585796442647, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+  m_PrefabInstance: {fileID: 474378534}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef130f155b34e14586da8a8e74c6d97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1102689598 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6808391324876466921, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+  m_PrefabInstance: {fileID: 474378534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1307571752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8044094246245261381, guid: c7acca0b40cb0ae4e90339e86d3db99e, type: 3}
+  m_PrefabInstance: {fileID: 474378534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1454681223
 GameObject:
   m_ObjectHideFlags: 0

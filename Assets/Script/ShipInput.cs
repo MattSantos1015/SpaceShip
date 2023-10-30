@@ -6,6 +6,7 @@ public class ShipInput : MonoBehaviour
 {
     [SerializeField] private ShipCamera shipCam;
     private ShipMovement shipMove;
+    [SerializeField] private Wreckingball wreckingball;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,10 @@ public class ShipInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1)) shipCam.ZoomOut();
         if (Input.GetKeyUp(KeyCode.Mouse1)) shipCam.DefaultZoom();
+        if (Input.GetKeyDown(KeyCode.Mouse0) && wreckingball.readyToLaunch)
+        {
+            wreckingball.Launch();
+        }
     }
     private void FixedUpdate()
     {

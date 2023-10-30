@@ -6,18 +6,18 @@ using UnityEngine;
 public class Wreckingball : MonoBehaviour
 {
     [SerializeField]
-    private float returnDelay = 1;
+    public float returnDelay = 1;
     [SerializeField]
-    private float launcForce = 10;
+    public float launcForce = 10;
     [SerializeField]
     AnimationCurve curve;
     [SerializeField]
-    private float returnIntervalInSeconds = 2;
+    public float returnIntervalInSeconds = 2;
    
    
-    private Transform ballStart;
-    private Rigidbody rb;
-    private bool readyToLaunch = true;
+    public Transform ballStart;
+    public Rigidbody rb;
+    public bool readyToLaunch = true;
 
    
 
@@ -28,19 +28,19 @@ public class Wreckingball : MonoBehaviour
         ballStart = GameObject.Find("BallStart").transform; // the parent we are the child of
     }
     // remove when attaching to ship
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && readyToLaunch) 
-        {
-            Launch();
-        }
+  //  private void Update()
+   // {
+      //  if(Input.GetKeyDown(KeyCode.Mouse0) && readyToLaunch) 
+      //  {
+     //      Launch();
+      //  }
 
-        if(readyToLaunch)
-        {
-            this.transform.position = ballStart.position;
-            this.transform.rotation = ballStart.rotation;
-        }
-    }
+      //  if(readyToLaunch)
+      //  {
+      //      this.transform.position = ballStart.position;
+       //     this.transform.rotation = ballStart.rotation;
+       // }
+   // }
     public void Launch()
     {
         StartCoroutine(Return());
@@ -49,10 +49,11 @@ public class Wreckingball : MonoBehaviour
         rb.AddForce(ballStart.forward * launcForce, ForceMode.Impulse);
     }
 
-    private IEnumerator Return()
+    public IEnumerator Return()
     {
         Debug.Log("Ball is Returning");
         yield return new WaitForSeconds(returnDelay);
+        readyToLaunch = false;
         rb.isKinematic = true;
         //lerp back to start 
        // this.transform.localPosition = new Vector3 (0, 0, 0);
